@@ -1,0 +1,52 @@
+backend:
+  name: git-gateway
+  branch: main
+  repo: seemafurni-del/seemafurniture
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: editorial_workflow
+
+site_url: "https://seemafurniture.netlify.app"
+
+collections:
+  - name: "pages"
+    label: "Website Pages"
+    files:
+      - label: "Home Page"
+        name: "index"
+        file: "index.html"
+        editor:
+          preview: false
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Main Content", name: "body", widget: "text" }
+
+      - label: "About Page"
+        name: "about"
+        file: "about.html"
+        editor:
+          preview: false
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Main Content", name: "body", widget: "text" }
+
+      - label: "Contact Page"
+        name: "contact"
+        file: "contact.html"
+        editor:
+          preview: false
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Main Content", name: "body", widget: "text" }
+
+  - name: "products"
+    label: "Products"
+    folder: "products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
