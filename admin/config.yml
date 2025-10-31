@@ -1,101 +1,47 @@
-############################
-# Decap CMS (Netlify CMS) config
-# Save this file as admin/config.yml
-############################
-
-# Backend: use git-gateway + netlify identity (recommended for Netlify-hosted sites)
 backend:
   name: git-gateway
-  branch: main        # change if your default branch is not 'main'
+  branch: main  # or "master" depending on your repo
+  repo: seemafurni-del/seemafurniture
 
-# Enable the editorial workflow (Drafts / Publish) — optional but recommended
-editorial_workflow: true
+media_folder: "images/uploads" # Folder where images are stored in repo
+public_folder: "/images/uploads" # Folder path used by the site
 
-# Where uploaded media are stored in your repository (relative to repo root)
-media_folder: "static/images/uploads"   # path inside repo where images will be saved
-public_folder: "/images/uploads"        # how images are referenced on the deployed site
+publish_mode: editorial_workflow
 
-# Optional: specify site URL (not required, but useful)
-site_url: "https://seemafurniture.netlify.app"
-
-# Collections define content types
 collections:
-
-  # Single-file collection for global site settings (like header/footer)
-  - name: "settings"
-    label: "Site Settings"
-    editor:
-      preview: false
+  - name: "pages"
+    label: "Website Pages"
     files:
-      - label: "General"
-        name: "general"
-        file: "content/settings/general.yml"
+      - label: "Home Page"
+        name: "index"
+        file: "index.html"
+        editor:
+          preview: false
         fields:
-          - {label: "Site title", name: "site_title", widget: "string"}
-          - {label: "Tagline", name: "tagline", widget: "string"}
-          - {label: "Logo", name: "logo", widget: "image"}
-
-  # Homepage content (single file)
-  - name: "homepage"
-    label: "Homepage"
-    files:
-      - label: "Hero / Main"
-        name: "hero"
-        file: "content/homepage/hero.md"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Subtitle", name: "subtitle", widget: "string"}
-          - {label: "Call to action text", name: "cta_text", widget: "string"}
-          - {label: "Call to action URL", name: "cta_url", widget: "string"}
-          - {label: "Hero image", name: "hero_image", widget: "image"}
-
-  # Product collection (each product is a file in a folder)
-  - name: "products"
-    label: "Products"
-    folder: "content/products"
-    create: true
-    slug: "{{slug}}"
-    preview_path: "products/{{slug}}"   # optional: adjust to your routing
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "SKU", name: "sku", widget: "string"}
-      - {label: "Price", name: "price", widget: "number"}
-      - {label: "Short description", name: "short_description", widget: "text"}
-      - {label: "Long description", name: "body", widget: "markdown"}
-      - {label: "Category", name: "category", widget: "relation", collection: "categories", search_fields: ["title"], value_field: "title", display_fields: ["title"]}
-      - {label: "Main image", name: "image", widget: "image"}
-      - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
-      - {label: "Published", name: "published", widget: "boolean", default: true}
-
-  # Categories collection (simple)
-  - name: "categories"
-    label: "Categories"
-    folder: "content/categories"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-
-  # About page (single file)
-  - name: "about"
-    label: "About"
-    files:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Main Content", name: "body", widget: "text"}
       - label: "About Page"
-        name: "about_page"
-        file: "content/about.md"
+        name: "about"
+        file: "about.html"
+        editor:
+          preview: false
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-          - {label: "Team", name: "team", widget: "list", fields: [{label: "Name", name: "name", widget: "string"}, {label: "Role", name: "role", widget: "string"}, {label: "Photo", name: "photo", widget: "image"}]}
-
-  # Contact page (single file)
-  - name: "contact"
-    label: "Contact"
-    files:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Main Content", name: "body", widget: "text"}
       - label: "Contact Page"
         name: "contact"
-        file: "content/contact.md"
+        file: "contact.html"
+        editor:
+          preview: false
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Main Content", name: "body", widget: "text"}
+  - name: "products"
+    label: "Products"
+    folder: "products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Product Name", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
