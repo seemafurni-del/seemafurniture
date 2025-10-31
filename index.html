@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-adsense-account" content="ca-pub-6781917949349435">
+  <meta name="description" content="Seema Furniture Jaipur - Best furniture store in Jaipur offering wooden, aluminium. Explore modern sofas, beds, and dining sets." />
+  <meta name="keywords" content="Seema Furniture Jaipur, furniture shop in Jaipur, best furniture store in Jaipur, wooden furniture Jaipur, aluminium furniture Jaipur, custom furniture Jaipur, furniture manufacturer in Jaipur, sofa set Jaipur, bed shop Jaipur, dining table Jaipur, office furniture Jaipur, home furniture Jaipur, living room furniture Jaipur, bedroom furniture Jaipur, luxury furniture Jaipur, Seema Furniture and Aluminium Jaipur, interior furniture Jaipur, wardrobes Jaipur, kitchen cabinets Jaipur, affordable furniture Jaipur, modern furniture Jaipur" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Seema Furniture Jaipur | Furniture Manufacturer in Jaipur</title>
+  
+  <!-- LOGO PATH CORRECTED: referencing the local file -->
+  <link rel="icon" type="image/png" href="/logo.png"/> 
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Business Schema: Image path corrected -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FurnitureStore",
+    "name": "Seema Furniture and Aluminium",
+    "image": "images/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Syosingpura, Sanganer",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "postalCode": "302029",
+      "addressCountry": "IN"
+    },
+    "telephone": "+91-7877816692",
+    "url": "https://seemafurniture.netlify.app",
+    "priceRange": "₹₹",
+    "openingHours": "Mo-Su 10:00-20:00"
+  }
+  </script>
+
+  <!-- ADSENSE SCRIPT: CLIENT ID UPDATED HERE -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781917949349435" crossorigin="anonymous"></script>
+
+  <style>
+    /* Kept WhatsApp styling as is for functionality */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      text-align: center;
+      font-size: 28px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      background-color: #20b358;
+    }
+  </style>
+</head>
+
+<body class="font-sans text-gray-900 bg-white">
+
+  <!-- Header: Now includes a mobile menu toggle button -->
+  <header class="bg-white shadow-lg sticky top-0 z-50 border-b border-yellow-100">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="/logo.png" alt="Seema Furniture and Aluminium Logo" class="h-10 w-auto" />
+        <span class="flex flex-col leading-none">
+            <span class="font-extrabold text-xl text-gray-800 tracking-wide">SEEMA FURNITURE</span>
+            <span class="font-medium text-xs text-gray-500 tracking-widest uppercase">and aluminium</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="space-x-6 hidden md:flex font-medium">
+        <a href="index.html" class="text-gray-700 hover:text-yellow-600 transition duration-150 ease-in-out">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-yellow-600 transition duration-150 ease-in-out">About</a>
+        <a href="products.html" class="text-gray-700 hover:text-yellow-600 transition duration-150 ease-in-out">Products</a>
+        <a href="gallery.html" class="text-gray-700 hover:text-yellow-600 transition duration-150 ease-in-out">Gallery</a>
+        <a href="contact.html" class="text-gray-700 hover:text-yellow-600 transition duration-150 ease-in-out">Contact</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-button" class="md:hidden p-2 text-gray-700 hover:text-yellow-600" aria-label="Toggle menu" onclick="toggleMobileMenu()">
+        <!-- Hamburger Icon (Menu closed) -->
+        <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <!-- Close Icon (Menu open) -->
+        <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer (Hidden by default) -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-40 transform transition-transform duration-300 translate-x-full md:hidden shadow-xl pt-20">
+    <div class="flex flex-col space-y-4 p-6">
+      <a href="index.html" class="text-xl font-semibold text-gray-800 hover:text-yellow-600 transition duration-150 border-b pb-2" onclick="closeMobileMenu()">Home</a>
+      <a href="about.html" class="text-xl font-semibold text-gray-800 hover:text-yellow-600 transition duration-150 border-b pb-2" onclick="closeMobileMenu()">About</a>
+      <a href="products.html" class="text-xl font-semibold text-gray-800 hover:text-yellow-600 transition duration-150 border-b pb-2" onclick="closeMobileMenu()">Products</a>
+      <a href="gallery.html" class="text-xl font-semibold text-gray-800 hover:text-yellow-600 transition duration-150 border-b pb-2" onclick="closeMobileMenu()">Gallery</a>
+      <a href="contact.html" class="text-xl font-semibold text-gray-800 hover:text-yellow-600 transition duration-150 border-b pb-2" onclick="closeMobileMenu()">Contact</a>
+    </div>
+  </div>
+  
+  <!-- Main Content -->
+
+  <section class="relative bg-cover bg-center h-[90vh] flex items-center" style="background-image: url('https://www.insaraf.com/cdn/shop/articles/Unleash_Your_Style_How_to_Set_Up_Your_Living_Room_Maximizing_Space_and_Style_Living_Room_Furniture_Setup_7c4f3bde-fd9d-404b-a692-1f365e0c0502_2048x.jpg?v=1756303687');">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/30"></div>
+    <div class="max-w-7xl mx-auto relative z-10 flex flex-col items-start justify-center text-white px-4">
+      <p class="text-lg sm:text-xl md:text-2xl font-light mb-2 tracking-wider uppercase">Crafting Comfort Since 2020</p>
+      <!-- Responsive text sizing for H1 -->
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-5 leading-tight">Premium Furniture <br><span class="text-yellow-400">Manufacturer in Jaipur</span></h1>
+      <p class="text-base sm:text-lg md:text-xl mb-8 max-w-xl">Custom wooden & aluminium furniture crafted with love, precision, and guaranteed durability.</p>
+      <a href="products.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold px-8 py-3 sm:px-10 sm:py-4 rounded-lg shadow-xl transition transform hover:scale-105 duration-300">
+        Explore Our Collections →
+      </a>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto my-6 sm:my-8 p-3 sm:p-4 text-center bg-gray-100 rounded-lg shadow-inner">
+    <p class="text-sm text-gray-500 mb-2">Advertisement</p>
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-6781917949349435" <!-- ADSENSE CLIENT ID UPDATED HERE -->
+      data-ad-slot="6161400548"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section class="py-12 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <!-- Responsive text sizing for H2 -->
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3 border-b-2 border-yellow-500 inline-block pb-1">About Seema Furniture</h2>
+      <p class="text-base sm:text-lg text-gray-600 leading-relaxed mt-6 max-w-4xl mx-auto">
+        Seema Furniture and Aluminium is a leading Jaipur-based manufacturer offering a wide range of premium furniture crafted from solid wood and aluminium. From modern sofa sets and beds to custom-made dining tables and wardrobes, we provide affordable luxury furniture designed for your comfort and lifestyle.
+      </p>
+      <a href="about.html" class="mt-6 inline-block text-yellow-600 hover:text-yellow-700 font-semibold border-b border-yellow-600">Read More About Our Story →</a>
+    </div>
+  </section>
+
+  <section class="py-12 sm:py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-12 text-gray-800">Our Signature Categories 🛋️</h2>
+      <!-- Grid automatically stacks on mobile and switches to 3 columns on medium screens -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10">
+        <div class="group relative overflow-hidden rounded-xl shadow-2xl transition transform hover:scale-[1.02] duration-300 cursor-pointer">
+          <img src="https://m.media-amazon.com/images/I/71u3F2NZ9gL.jpg" alt="Sofa Set Jaipur - Seema Furniture" class="w-full h-64 sm:h-80 object-cover brightness-90 group-hover:brightness-100 transition duration-500" loading="lazy" />
+          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300 flex items-end">
+            <h3 class="font-bold text-2xl sm:text-3xl text-white p-4 sm:p-6 backdrop-blur-sm w-full bg-black/40">Sofa Sets</h3>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-xl shadow-2xl transition transform hover:scale-[1.02] duration-300 cursor-pointer">
+          <img src="https://images.woodenstreet.de/image/data/bed-with-storage/ferguson-bed-with-storage/walnut/updated/new-logo/new%20-3D/13.jpg" alt="Wooden Bed Jaipur - Seema Furniture" class="w-full h-64 sm:h-80 object-cover brightness-90 group-hover:brightness-100 transition duration-500" loading="lazy" />
+          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300 flex items-end">
+            <h3 class="font-bold text-2xl sm:text-3xl text-white p-4 sm:p-6 backdrop-blur-sm w-full bg-black/40">Beds</h3>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-xl shadow-2xl transition transform hover:scale-[1.02] duration-300 cursor-pointer">
+          <img src="https://m.media-amazon.com/images/I/91H82-mQZLL._AC_UF894,1000_QL80_.jpg" alt="Dining Table Jaipur - Seema Furniture" class="w-full h-64 sm:h-80 object-cover brightness-90 group-hover:brightness-100 transition duration-500" loading="lazy" />
+          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300 flex items-end">
+            <h3 class="font-bold text-2xl sm:text-3xl text-white p-4 sm:p-6 backdrop-blur-sm w-full bg-black/40">Dining Tables</h3>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8 sm:mt-12">
+        <a href="products.html" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold px-6 py-3 sm:px-8 rounded-full transition duration-300 shadow-md">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-8 sm:mb-10">Why Clients Trust Seema Furniture 🤝</h2>
+      <!-- Grid automatically stacks on mobile and switches to 3 columns on medium screens -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div class="p-6 bg-yellow-50 rounded-lg shadow-lg">
+          <p class="text-4xl mb-3">🛠️</p>
+          <p class="text-xl font-semibold text-gray-800 mb-1">Custom Furniture</p>
+          <p class="text-gray-600 text-sm">Made to order, perfectly fitting your space and style requirements.</p>
+        </div>
+        <div class="p-6 bg-yellow-50 rounded-lg shadow-lg">
+          <p class="text-4xl mb-3">🌲</p>
+          <p class="text-xl font-semibold text-gray-800 mb-1">Premium Quality</p>
+          <p class="text-gray-600 text-sm">Only the best wood and aluminium, ensuring longevity and durability.</p>
+        </div>
+        <div class="p-6 bg-yellow-50 rounded-lg shadow-lg">
+          <p class="text-4xl mb-3">💸</p>
+          <p class="text-xl font-semibold text-gray-800 mb-1">Affordable Luxury</p>
+          <p class="text-gray-600 text-sm">Modern designs and superior craftsmanship at factory-direct prices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 sm:py-16 bg-gray-100 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-700 mb-4 text-center">Seema Furniture Jaipur – Crafted with Care</h2>
+      <div class="text-gray-600 leading-relaxed text-center max-w-4xl mx-auto space-y-4 text-sm sm:text-base">
+        <p>
+          Seema Furniture Jaipur brings you the finest range of home and office furniture built with durability and design in mind. Whether you’re looking for a modern sofa, wooden bed, dining set, or aluminium outdoor furniture, our designs combine quality craftsmanship with timeless appeal. we serve customers across Jaipur with personalized furniture solutions.
+        </p>
+        <p>
+          Each product is handcrafted by skilled artisans to ensure perfection in every detail. Visit our showroom or contact us for customized furniture solutions at affordable prices.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 sm:py-20 bg-yellow-700 text-white text-center">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Furnish Your Dream Space?</h2>
+      <p class="text-lg sm:text-xl mb-8 font-light">Visit our showroom or get in touch for a free design consultation.</p>
+      
+      <!-- Contact Info stacked on mobile, side-by-side on desktop -->
+      <div class="space-y-3 md:space-y-0 md:flex md:justify-center md:space-x-8 mb-8 text-sm sm:text-lg">
+        <p class="font-medium">📍 Address: Syosingpura, Sanganer, Jaipur, Rajasthan</p>
+        <p class="font-medium">📞 Call Us: +91-7877816692</p>
+      </div>
+
+      <a href="https://goo.gl/maps/7hV8xv7b7TjF4QXc6" class="bg-white hover:bg-gray-100 text-yellow-700 font-extrabold px-8 py-3 sm:px-10 sm:py-4 rounded-full inline-block transition transform hover:scale-105 duration-300 shadow-xl text-sm sm:text-base">
+        Get Directions on Google Maps 🗺️
+      </a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400 space-y-3">
+      <p>&copy; 2025 Seema Furniture and Aluminium. All rights reserved.</p>
+      <div class="space-x-4">
+        <a href="privacy-policy.html" class="hover:text-yellow-500 transition duration-150">Privacy Policy</a>
+        <span class="text-gray-600">|</span>
+        <a href="contact.html" class="hover:text-yellow-500 transition duration-150">Contact Us</a>
+      </div>
+      <p class="text-xs pt-2">Furniture Manufacturer in Jaipur.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/917877816692?text=Hello%20Seema%20Furniture!%20I%20want%20to%20know%20more%20about%20your%20products." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="30" height="30">
+      <path d="M12.04 2c-5.5 0-9.97 4.47-9.97 9.97 0 1.76.46 3.47 1.33 4.99L2 22l5.17-1.35a9.97 9.97 0 004.87 1.25h.01c5.5 0 9.97-4.47 9.97-9.97A9.94 9.94 0 0012.04 2zm5.85 14.3c-.24.66-1.38 1.27-1.9 1.35-.48.08-1.1.11-1.78-.11a8.52 8.52 0 01-3.98-2.2 9.1 9.1 0 01-2.9-4.38c-.29-.81-.03-1.54.44-2.02.24-.25.53-.4.86-.46.22-.04.45-.01.64.06.19.08.41.29.51.55l.8 1.9c.12.28.08.62-.1.86-.06.07-.11.14-.18.2-.09.08-.18.17-.13.3.2.56.73 1.26 1.32 1.83.67.64 1.34 1.08 2.07 1.35.1.04.22.03.3-.04.1-.09.18-.17.26-.27.18-.2.42-.25.67-.17l2.04.7c.25.09.41.22.48.38.07.16.05.37-.01.54z"/>
+    </svg>
+  </a>
+
+  <script>
+    /**
+     * Toggles the mobile menu visibility and switches the hamburger/close icons.
+     */
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('menu-open-icon');
+      const closeIcon = document.getElementById('menu-close-icon');
+
+      if (menu.classList.contains('translate-x-full')) {
+        // Open menu
+        menu.classList.remove('translate-x-full');
+        openIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+      } else {
+        // Close menu
+        menu.classList.add('translate-x-full');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+    }
+
+    /**
+     * Ensures the mobile menu is closed when a link is clicked.
+     */
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (!menu.classList.contains('translate-x-full')) {
+        toggleMobileMenu();
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

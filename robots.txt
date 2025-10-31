@@ -1,0 +1,25 @@
+# =====================================================
+# robots.txt for seemafurniture.netlify.app
+# Author: Seema Furniture
+# Purpose: Guide search engines for efficient crawling
+# =====================================================
+
+# Allow all major search engines
+User-agent: *
+Allow: /
+
+# Prevent crawling of unnecessary backend or temporary files
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /test/
+Disallow: /backup/
+
+# Crawl-delay (optional): helps manage server load (especially on Netlify)
+# Crawl-delay: 5
+
+# Sitemap link for faster and structured indexing
+Sitemap: https://seemafurniture.netlify.app/sitemap.xml
+
+# End of robots.txt
+# =====================================================

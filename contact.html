@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seema Furniture - Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
+        html { scroll-behavior: smooth; }
+        .nav-link { color: white; transition: color 0.3s; padding: 0.5rem; border-radius: 0.5rem; }
+        .nav-link:hover { color: #f7f7f7; background-color: rgba(255, 255, 255, 0.1); }
+    </style>
+    <script>
+        // Global Constants
+        const WHATSAPP_NUMBER = '917877816692'; 
+
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-wood': '#5D4037', 
+                        'accent-green': '#059669', 
+                    }
+                }
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navigation setup (repeated for consistency)
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuButton.addEventListener('click', () => {
+                const isActive = mobileMenu.classList.contains('max-h-72');
+                mobileMenu.classList.toggle('max-h-72', !isActive);
+                mobileMenu.classList.toggle('max-h-0', isActive);
+            });
+        });
+    </script>
+</head>
+<body class="text-gray-800">
+
+    <!-- Universal Header / Navigation Bar -->
+    <header class="bg-primary-wood text-white shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-2xl font-bold tracking-wider">Seema Furniture</a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="custom.html" class="nav-link">Custom Design</a>
+                    <a href="contact.html" class="nav-link font-bold border-b-2 border-accent-green">Contact</a>
+                </nav>
+
+                <!-- CTA -->
+                <a href="https://wa.me/917877816692" target="_blank" class="bg-accent-green text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-emerald-700 transition duration-300 hidden sm:block">
+                    WhatsApp Us
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-button" class="md:hidden p-2 rounded-md hover:bg-primary-wood/70 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-primary-wood/95 absolute w-full transition-all duration-300 max-h-0 overflow-hidden">
+            <a href="index.html" class="block py-3 px-6 text-gray-100 hover:bg-primary-wood/80 border-t border-gray-700">Home</a>
+            <a href="products.html" class="block py-3 px-6 text-gray-100 hover:bg-primary-wood/80">Products</a>
+            <a href="custom.html" class="block py-3 px-6 text-gray-100 hover:bg-primary-wood/80">Custom Design</a>
+            <a href="contact.html" class="block py-3 px-6 text-gray-100 hover:bg-primary-wood/80 border-b border-gray-700 font-bold">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-extrabold text-primary-wood mb-3 text-center">Get in Touch</h1>
+            <p class="text-lg text-gray-600 mb-10 text-center">We're here to answer any questions about our products or custom services.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                
+                <!-- Contact Information -->
+                <div class="lg:col-span-1 space-y-8 p-6 bg-white rounded-xl shadow-lg h-full">
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="text-2xl text-accent-green">📞</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary-wood">Call or WhatsApp</h3>
+                            <p class="text-gray-600 font-mono">
+                                <a href="tel:+917877816692" class="hover:underline">+91 78778 16692</a>
+                            </p>
+                            <p class="text-sm text-gray-500">Fastest response during business hours.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="text-2xl text-accent-green">📧</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary-wood">Email Us</h3>
+                            <a href="mailto:seema.furni@gmail.com" <p class="text-gray-600 font-mono">seema.furni@gmail.com</p>
+                            <p class="text-sm text-gray-500">For detailed inquiries and quotes.</p></a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="text-2xl text-accent-green">📍</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary-wood">Visit Our Showroom</h3>
+                            <a href="https://maps.app.goo.gl/UW5qwMazUezjtYJ37"<p class="text-gray-600">
+                                40, Indra Nagar Kallawala Syosingpura Sanganer<br>
+                                Jaipur, Rajasthan, 303905
+                            </p></a>
+                            <p class="text-sm text-gray-500">Appointment preferred for custom consultations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-2 p-6 bg-white rounded-xl shadow-lg">
+                    <h2 class="text-2xl font-bold text-primary-wood mb-6">Send Us a Message</h2>
+                    
+                    <!-- IMPORTANT: Replace the 'action' URL with your actual FormSubmit/Formspree endpoint -->
+                    <form action="https://formspree.io/f/mgvpkbrn" method="POST" class="space-y-4">
+                        <input type="hidden" name="_subject" value="New General Contact Inquiry from Website">
+                        
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                            <input type="text" id="name" name="Name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent-green focus:border-accent-green" placeholder="John Doe">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                            <input type="email" id="email" name="Email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent-green focus:border-accent-green" placeholder="you@example.com">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="Phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent-green focus:border-accent-green" placeholder="+91 78778 16692">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                            <textarea id="message" name="Message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent-green focus:border-accent-green" placeholder="I am interested in..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary-wood text-white font-bold py-3 rounded-lg shadow-md hover:bg-gray-700 transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
+            &copy; 2025 Seema Furniture. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

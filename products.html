@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo.png" />
+  <title>Seema Furniture Jaipur | Wooden, Aluminium & Custom Furniture Manufacturer in Jaipur</title>
+  <meta name="description" content="Buy premium quality wooden, aluminium, and custom furniture from Seema Furniture Jaipur. Explore our wide range of sofas, beds, dining tables, office furniture, and home furniture near VGU Campus, Jaipur. Affordable prices and top-quality craftsmanship.">
+  <meta name="keywords" content="Seema Furniture Jaipur, furniture shop in Jaipur, best furniture store in Jaipur, wooden furniture Jaipur, aluminium furniture Jaipur, custom furniture Jaipur, furniture near VGU Campus, furniture manufacturer in Jaipur, sofa set Jaipur, bed shop Jaipur, dining table Jaipur, office furniture Jaipur, home furniture Jaipur, living room furniture Jaipur, bedroom furniture Jaipur, modern furniture Jaipur, luxury furniture Jaipur, furniture showroom Jaipur, furniture dealers in Jaipur, affordable furniture Jaipur, Seema Furniture products, Jaipur furniture manufacturer, furniture online Jaipur, furniture maker Jaipur">
+  <meta name="author" content="Seema Furniture Jaipur">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="geo.region" content="IN-RJ">
+  <meta name="geo.placename" content="Jaipur">
+  <meta name="geo.position" content="26.9124;75.7873">
+  <meta name="ICBM" content="26.9124, 75.7873">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Theme CSS -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f3;
+      color: #2d2d2d;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    header {
+      background-color: #1a1a1a;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .nav-link {
+      color: #f5f5f5;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #FFC107;
+    }
+
+    .active-link {
+      color: #FFC107;
+      border-bottom: 2px solid #FFC107;
+    }
+
+    /* Accent colors */
+    .bg-accent-yellow {
+      background-color: #FFC107 !important;
+    }
+    .bg-accent-yellow:hover {
+      background-color: #e0aa06 !important;
+    }
+    .text-accent-yellow {
+      color: #FFC107 !important;
+    }
+
+    /* Filter Buttons */
+    #filter-buttons {
+      background-color: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+      padding: 1rem;
+    }
+    .filter-btn {
+      border-radius: 2rem;
+      transition: all 0.3s ease;
+    }
+    .filter-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Product Cards */
+    #products-container .bg-white {
+      background-color: #ffffff;
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    #products-container .bg-white:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    #products-container img {
+      border-bottom: 1px solid #eee;
+      transition: transform 0.4s ease;
+    }
+    #products-container img:hover {
+      transform: scale(1.05);
+    }
+
+    #products-container h3 {
+      color: #3b2f2f;
+      font-weight: 600;
+    }
+    #products-container p {
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1a1a1a;
+      color: #d4d4d4;
+      text-align: center;
+    }
+    footer a {
+      color: #FFC107;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Loading animation */
+    .loading-animation {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #FFC107;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .text-4xl {
+        font-size: 1.75rem;
+      }
+      #products-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+    @media (max-width: 500px) {
+      #products-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script>
+    const WHATSAPP_NUMBER = '917877816692';
+    const GOOGLE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1UpK99vn1NVEdebcup1TmUDk7tuoQRRn1wRlVjGP21Zo/gviz/tq?tqx=out:json&sheet=Sheet1';
+    let allProducts = [];
+
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'accent-yellow': '#FFC107',
+          }
+        }
+      }
+    }
+
+    function getCleanWhatsAppNumber() {
+      return WHATSAPP_NUMBER.replace(/[\s\+\-()]/g, '');
+    }
+
+    function getWhatsAppLink(productName, productId, imageUrl) {
+      const cleanNumber = getCleanWhatsAppNumber();
+      const message =
+        `Hello, I want to inquire about this product:\n\n` +
+        `Product Name: ${productName}\n` +
+        `Product ID: ${productId}\n` +
+        `Image URL: ${imageUrl}`;
+      const encodedMessage = encodeURIComponent(message);
+      return `https://wa.me/${cleanNumber}?text=${encodedMessage}`;
+    }
+
+    function parseGvizJson(rawText) {
+      const jsonTextMatch = rawText.match(/google\.visualization\.Query\.setResponse\((.*?)\);/s);
+      if (!jsonTextMatch || jsonTextMatch.length < 2) throw new Error('Could not find Google Visualization response data.');
+      const gvizData = JSON.parse(jsonTextMatch[1]);
+      if (!gvizData.table || !gvizData.table.rows) throw new Error('Invalid G-Viz structure.');
+
+      const columns = gvizData.table.cols.map(col => col.label);
+      const HEADER_MAP = {
+        'ID': ['ID', 'Product ID', 'id'],
+        'Name': ['Name', 'Product Name'],
+        'Category': ['Category', 'Type'],
+        'Price': ['Price', 'Amount'],
+        'ImageURL': ['ImageURL', 'Image Link', 'Image URL'],
+        'Description': ['Description', 'Details']
+      };
+
+      const headerIndices = {};
+      Object.keys(HEADER_MAP).forEach(key => {
+        for (const header of HEADER_MAP[key]) {
+          const idx = columns.findIndex(c => c.trim().toLowerCase() === header.toLowerCase());
+          if (idx !== -1 && headerIndices[key] === undefined) headerIndices[key] = idx;
+        }
+      });
+
+      const seenIds = new Set();
+      return gvizData.table.rows.map(row => {
+        const product = {
+          ID: row.c[headerIndices['ID']]?.v || '',
+          Name: row.c[headerIndices['Name']]?.v || '',
+          Category: row.c[headerIndices['Category']]?.v || '',
+          Price: row.c[headerIndices['Price']]?.f || row.c[headerIndices['Price']]?.v || 'Inquire for Price',
+          ImageURL: row.c[headerIndices['ImageURL']]?.v || '',
+          Description: row.c[headerIndices['Description']]?.v || 'High-quality furniture.'
+        };
+        if (!product.ID || !product.Name || !product.Category || seenIds.has(product.ID)) return null;
+        seenIds.add(product.ID);
+        return product;
+      }).filter(Boolean);
+    }
+
+    async function fetchProducts() {
+      const container = document.getElementById('products-container');
+      const loading = document.getElementById('loading-indicator');
+      loading.classList.remove('hidden');
+      try {
+        const res = await fetch(GOOGLE_SHEET_URL);
+        const text = await res.text();
+        const products = parseGvizJson(text);
+        allProducts = products;
+        setupCategoryFilters(allProducts);
+        renderProducts(allProducts, container);
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = `<p class="text-red-500 text-center py-8">Error loading products.</p>`;
+      } finally {
+        loading.classList.add('hidden');
+      }
+    }
+
+    function setupCategoryFilters(products) {
+      const categories = new Set(['All']);
+      products.forEach(p => categories.add(p.Category || 'Other'));
+      const container = document.getElementById('filter-buttons');
+      container.innerHTML = '';
+      categories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.textContent = cat;
+        btn.className = 'filter-btn px-4 py-2 mx-1 my-1 rounded-full text-sm font-semibold bg-white text-accent-yellow border border-accent-yellow hover:bg-accent-yellow hover:text-white';
+        if (cat === 'All') btn.classList.add('bg-accent-yellow', 'text-white');
+        btn.addEventListener('click', () => filterProducts(cat));
+        container.appendChild(btn);
+      });
+    }
+
+    function filterProducts(category) {
+      const filtered = category === 'All' ? allProducts : allProducts.filter(p => p.Category === category);
+      renderProducts(filtered, document.getElementById('products-container'));
+    }
+
+    function renderProducts(products, container) {
+      if (!products.length) {
+        container.innerHTML = '<p class="text-center text-gray-500 col-span-full py-10">No products found.</p>';
+        return;
+      }
+      container.innerHTML = products.map(p => `
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+          <div class="overflow-hidden rounded-t-xl">
+            <img src="${p.ImageURL || 'https://placehold.co/600x400'}" alt="${p.Name}" class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-accent-yellow mb-2">${p.Name}</h3>
+            <p class="text-lg font-semibold text-accent-yellow mb-3">${p.Price}</p>
+            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">${p.Description}</p>
+            <a href="${getWhatsAppLink(p.Name, p.ID, p.ImageURL)}" target="_blank" class="block text-center bg-accent-yellow text-white font-bold py-2 rounded-lg hover:bg-yellow-600 transition">Inquire on WhatsApp</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchProducts);
+  </script>
+</head>
+
+<body class="text-gray-800">
+
+  <!-- Navbar -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <a href="index.html" class="text-2xl font-bold tracking-wider text-accent-yellow">Seema Furniture</a>
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-link">Home</a>
+	<a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link active-link">Products</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <a href="https://wa.me/917877816692" target="_blank" class="bg-accent-yellow text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-yellow-600 transition hidden sm:block">WhatsApp Us</a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-extrabold text-accent-yellow mb-4 text-center">Our Ready Collections</h1>
+      <p class="text-lg text-gray-600 mb-10 text-center">Explore handcrafted furniture made in Jaipur — elegant sofas, durable beds, and stylish fittings designed for comfort and class.</p>
+
+      <div id="filter-buttons" class="flex flex-wrap justify-center mb-10"></div>
+
+      <div id="loading-indicator" class="flex flex-col items-center justify-center py-12">
+        <div class="loading-animation mb-3"></div>
+        <p class="text-accent-yellow font-medium">Loading collections...</p>
+      </div>
+
+      <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-6">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
+      &copy; 2025 Seema Furniture. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
+
+
