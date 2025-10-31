@@ -3,32 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <title>Seema Furniture CMS</title>
-
-    <!-- Load Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
     <h2 style="text-align:center; font-family:sans-serif;">Loading CMS...</h2>
 
-    <!-- Optional: Netlify Identity widget (safe even if not used) -->
+    <!-- Load Netlify Identity (optional but safe) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <script>
-      // Initialize Decap CMS
-      if (window.CMS) {
-        CMS.init(); // ✅ This ensures CMS attaches properly
-      }
+    <!-- Load Decap CMS after body -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-      // Netlify login redirect
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
+    <script>
+      // Initialize CMS once everything has loaded
+      window.addEventListener("DOMContentLoaded", () => {
+        if (window.CMS) {
+          CMS.init(); // ✅ safely attach CMS to the document body
+        }
+
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      });
     </script>
   </body>
 </html>
