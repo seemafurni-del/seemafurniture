@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: seemafurni-del/seemafurniture
   branch: main
+  base_url: https://seemafurniture.netlify.app
+
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
